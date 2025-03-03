@@ -1,8 +1,13 @@
 <?php
-// token de Telegram para el bot
-$token = "7905504114:AAGJuYDYQ4496ireJ5UTc5eCZuqu92Bcfno"; // ejemplo del token, colócalo aquí.
+// Evitar el acceso directo al archivo
+if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) {
+    // Mostrar error 404 en grande y detener la ejecución si alguien accede directamente
+    header("HTTP/1.0 404 Not Found");
+    echo "<h1 style='font-size: 50px; color: red; text-align: center;'>404 Not Found</h1>";
+    exit;
+}
 
-// chat_id de Telegram donde quieres enviar los mensajes
-$chat_id = "5157616506"; // el ID de chat que te dará Telegram
-
+// Aquí están tus datos sensibles
+$token = "7940181081:AAFuFg6fKQqkBvM8YF_ML-_ly4XaMOk1meY";
+$chat_id = "5157616506";
 ?>

